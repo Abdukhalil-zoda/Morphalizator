@@ -15,13 +15,32 @@
 
     <Grid Margin="56,0" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        
-        <ui:TextBox Grid.ColumnSpan="2" Margin="15" Width="70"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ui:TextBox Grid.Column="0" Text="{Binding ViewModel.WordText}" Margin="10" />
+        <ui:Button Grid.Column="1" Command="{Binding ViewModel.AnalyzeCommand}" Content="Analiz!"/>
         
         <!-- <ui:Button Grid.Column="0" Command="{Binding ViewModel.CounterIncrementCommand, Mode=OneWay}" Content="Click me!" Icon="Fluent24" /> -->
-        <!-- <TextBlock Grid.Column="1" Margin="12,0,0,0" VerticalAlignment="Center" Text="{Binding ViewModel.Counter, Mode=OneWay}" /> -->
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="64" Grid.Column="0" HorizontalAlignment="Left" FontFamily="Bold" VerticalAlignment="Center" Text="{Binding ViewModel.RootWord, Mode=OneWay}" />
+            <Grid VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="70" Height="30">
+                <Border CornerRadius="8"  Grid.Column="0" Background="{DynamicResource ControlFillColorDefaultBrush}" Opacity="10"/>
+                <TextBlock FontSize="32" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Bold" VerticalAlignment="Center" Text="{Binding ViewModel.RootWordType, Mode=OneWay}" />
+            </Grid>
+            
+            
+        </Grid>
+        
     </Grid>
 </ui:UiPage>
