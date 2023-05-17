@@ -27,13 +27,23 @@ namespace Morphalizator.ViewModels {
         [RelayCommand]
         private void Analyze() {
             var asoses = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory,"..", "..", "..", "Assets", "asos.txt"));
+            var qushimchases = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "Assets", "qushimcha.txt"));
             foreach (var line in asoses) {
-                if (WordText.ToLower().Contains(line.Split()[0])) {
+                if (WordText.ToLower().StartsWith(line.Split()[0])) {
                     RootWord = line.Split()[0];
                     RootWordType = line.Split()[1];
                     return;
                 }
             }
+
+            foreach (var line in qushimchases) {
+                var splited = line.Split(' ');
+                if (WordText.ToLower().Contains(splited[0])) {
+
+                }
+            }
+
+
         }
     }
 }

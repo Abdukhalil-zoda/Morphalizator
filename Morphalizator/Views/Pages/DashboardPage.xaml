@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock FontSize="64" Grid.Column="0" HorizontalAlignment="Left" FontFamily="Bold" VerticalAlignment="Center" Text="{Binding ViewModel.RootWord, Mode=OneWay}" />
-            <Grid VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="70" Height="30">
+            <Grid VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="auto" Height="auto">
                 <Border CornerRadius="8"  Grid.Column="0" Background="{DynamicResource ControlFillColorDefaultBrush}" Opacity="10"/>
                 <TextBlock FontSize="32" Grid.Column="0" HorizontalAlignment="Center" FontFamily="Bold" VerticalAlignment="Center" Text="{Binding ViewModel.RootWordType, Mode=OneWay}" />
             </Grid>
