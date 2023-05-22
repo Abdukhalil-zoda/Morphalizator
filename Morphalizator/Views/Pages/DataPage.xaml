@@ -17,6 +17,15 @@
     mc:Ignorable="d">
 
     <Grid Margin="56,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--
         <ui:VirtualizingItemsControl
             Foreground="{DynamicResource TextFillColorSecondaryBrush}"
             ItemsSource="{Binding ViewModel.Colors, Mode=OneWay}"
@@ -37,5 +46,19 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ui:VirtualizingItemsControl>
+        -->
+        <RichTextBox Grid.Row="0" Margin="10" 
+                     d:LayoutOverrides="Width, Height">
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+        </RichTextBox>
+        <ui:Button Grid.Column="0" Grid.Row="1" Margin="10"
+                   VerticalAlignment="Top" HorizontalAlignment="Right"
+                   Content="Analiz!">
+            
+        </ui:Button>
     </Grid>
 </ui:UiPage>
