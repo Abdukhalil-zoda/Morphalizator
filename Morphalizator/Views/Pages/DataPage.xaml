@@ -57,8 +57,10 @@
         </RichTextBox>
         <ui:Button Grid.Column="0" Grid.Row="1" Margin="10"
                    VerticalAlignment="Top" HorizontalAlignment="Right"
-                   Content="Analiz!">
-            
-        </ui:Button>
+                   Content="Analiz!"/>
+        <DataGrid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                  Margin="10">
+
+        </DataGrid>
     </Grid>
 </ui:UiPage>
