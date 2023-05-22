@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using Wpf.Ui.Common.Interfaces;
 using Path = System.IO.Path;
+using Morphalizator.Models;
 
 namespace Morphalizator.ViewModels {
     public partial class DashboardViewModel : ObservableObject, INavigationAware {
@@ -46,7 +47,6 @@ namespace Morphalizator.ViewModels {
                 if (other.Contains(splited[0]))
                 {
                     used.Add(line);
-                    //Qushimchas.Add(new Qushimcha(){Value = splited[0], Type = splited[1].Replace('_', ' ') });
                 }
                 
             }
@@ -69,11 +69,5 @@ namespace Morphalizator.ViewModels {
 
         
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Qushimcha {
-        public string? Value { get; set; }
-        public string? Type { get; set; }
-    }
+    
 }
