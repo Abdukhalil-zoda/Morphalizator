@@ -1,4 +1,6 @@
-﻿using Wpf.Ui.Common.Interfaces;
+﻿using System.Windows;
+using System.Windows.Controls;
+using Wpf.Ui.Common.Interfaces;
 
 namespace Morphalizator.Views.Pages {
     /// <summary>
@@ -13,6 +15,12 @@ namespace Morphalizator.Views.Pages {
             ViewModel = viewModel;
 
             InitializeComponent();
+        }
+
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var iss = dataGrid.ItemsSource;
+            //MessageBox.Show("bp");
         }
     }
 }

@@ -41,6 +41,6 @@
             
             
         </Grid>
-        <ui:DataGrid Grid.Row="2" Grid.ColumnSpan="2" Width="auto" ItemsSource="{Binding ViewModel.Qushimchas}"/>
+        <ui:DataGrid Name="dataGrid" SelectionChanged="Selector_OnSelectionChanged" Grid.Row="2" Grid.ColumnSpan="2" Width="auto" ItemsSource="{Binding ViewModel.Qushimchas, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </ui:UiPage>

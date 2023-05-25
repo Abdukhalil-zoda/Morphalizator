@@ -12,13 +12,13 @@ namespace Morphalizator.ViewModels {
         [ObservableProperty]
         private int _counter = 0;
         [ObservableProperty]
-        public string _WordText = string.Empty;
+        private string _WordText = string.Empty;
         [ObservableProperty]
-        public string _RootWord = string.Empty;
+        private string _RootWord = string.Empty;
         [ObservableProperty]
-        public string _RootWordType = string.Empty;
+        private string _RootWordType = string.Empty;
         [ObservableProperty]
-        public List<Qushimcha> _Qushimchas = new List<Qushimcha>();
+        private List<Qushimcha> _qushimchas = new List<Qushimcha>();
         public void OnNavigatedTo() {
         }
 
@@ -50,21 +50,26 @@ namespace Morphalizator.ViewModels {
                 }
                 
             }
+
             used.Sort((x, y) => x.Split()[0].Length.CompareTo(y.Split()[0].Length));
             used.Reverse();
-
-            foreach (var line in used)
+            int i = 0;
+            while (!string.IsNullOrWhiteSpace(other) && i <= used.Count)
             {
-                var splited = line.Split(' ');
-                if (other.StartsWith(splited[0]))
+                i++;
+                foreach (var line in used)
                 {
-                    other = other.Substring(splited[0].Length);
-                    Qushimchas.Add(new Qushimcha() { Value = splited[0], Type = splited[1].Replace('_', ' ') });
-                    
+                    var splited = line.Split(' ');
+                    if (other.StartsWith(splited[0]))
+                    {
+                        other = other.Substring(splited[0].Length);
+                        Qushimchas.Add(new Qushimcha() { Value = splited[0], Type = splited[1].Replace('_', ' ') });
+                        break;
+                    }
                 }
             }
 
-            int a = 0;
+            
         }
 
         

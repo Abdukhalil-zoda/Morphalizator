@@ -48,7 +48,7 @@
                                       VirtualizingPanel.CacheLengthUnit="Item">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type models:DataColor}">
-                    <Grid d:LayoutOverrides="Width, Height" Margin="5" Width="auto" Height="auto">
+                    <Grid d:LayoutOverrides="Width, Height" Margin="5" Width="200" Height="auto">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>

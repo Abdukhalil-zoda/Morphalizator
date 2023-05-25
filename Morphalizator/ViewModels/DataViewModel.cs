@@ -34,7 +34,7 @@ namespace Morphalizator.ViewModels {
             var RootWordType = "";
             Qushimchas.Clear();
             var asoses = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "Assets", "asos.txt"));
-            var qushimchas = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "Assets", "qushimcha.txt"));
+                                                          var qushimchas = File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "Assets", "qushimcha.txt"));
             foreach (var line in asoses) {
                 if (word.ToLower().StartsWith(line.Split()[0])) {
                     RootWord = line.Split()[0];
